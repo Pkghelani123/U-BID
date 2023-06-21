@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register Page</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		
+		form {
+			background-color: white;
+			border-radius: 5px;
+			padding: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 80%;
+			max-width: 600px;
+			box-shadow: 0px 0px 20px #ddd;
+		}
+		
+		input[type=text], input[type=password], input[type=email], input[type=tel] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		.register {
+  background-color: rgb(156, 131, 196);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.register:hover {
+  background-color: #0062cc;
+}
+		
+		.container {
+			padding: 16px;
+		}
+		
+		@media screen and (max-width: 600px) {
+			form {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Register Here</h1>
+	<form method="POST" action="/register">
+		<div class="container">
+			<label for="name"><b>Name</b></label>
+			<input type="text" placeholder="Enter Name" name="name" required>
+
+			<label for="email"><b>Email</b></label>
+			<input type="email" placeholder="Enter Email" name="email" required>
+
+            <label for="phone"><b>Phone No.</b></label>
+			<input type="tel" placeholder="Enter Phone Number" name="phone" required>
+
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="password" required>
+
+			{{!-- <label for="psw-repeat"><b>Repeat Password</b></label> --}}
+			{{!-- <input type="password" placeholder="Repeat Password" name="password" required> --}}
+			
+			<button type="submit" class="register">Register</button>
+		</div>
+	</form>
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+nav {
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo a {
+   font-size: 24px;
+   font-weight: 600;
+   text-decoration: none;
+   color: #333;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navigation li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navigation li a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  input:checked ~ .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+#mission {
+    margin-top: 60px;
+}
+
+#mission h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#mission p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#team {
+    margin-top: 60px;
+   
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Online Auction System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: rgb(224,214,224);">
+    <header>
+  <nav>
+    <div class="logo">
+      <a href="#">U-BID</a>
+    </div>
+    <div class="menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navigation">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/sell">Sell</a></li>
+       <li><a href="/bid">Auction</a></li>
+      <li><a href="/about">About US</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <main>
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>We strive to provide a secure and user-friendly platform for online auctions, offering a wide variety of items and ensuring fair bidding processes for both buyers and sellers.</p>
+        </section>
+
+        <section id="team">
+            <h2>Meet Our Team</h2>
+            <div class="person">
+                
+                <h3>Parth Ghelani</h3>
+                <p>Developer</p>
+            </div>
+            <div class="person">
+                
+                <h3>Sarthik Vaghasiya</h3>
+                <p>Developer</p>
+            </div>
+            
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>For any inquiries, please feel free to contact us at:</p>
+            <ul>
+                <li><strong>Phone:</strong> 9106180010</li>
+                <li><strong>Email:</strong> ubid@gmail.com</li>
+                <li><strong>Address:</strong> 123 Main St, Anand</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; U-BID </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-fik34tMS57Wy7V1J/ywInwp7H+5C5G5WTdPqf5k5wh5dy/U4+PQ8DZfCz1nRJhW8dFkU+f/c9a1dn6Ucrz6Gjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-hLHHk2Vh0Lkkbo0tVYc+PPOGOUV+Zc0XYW8+cbAKS5XAV7ulch5xJ+LS2/4E4zOhR7PBu/4MgoI5y98mqysS5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-zzZLJPuHc0bBibvynivj9s/I68pGHMaCmL0fTgTmJJbQ2GMZmDEWj13+cKVvBFTFAs29/6CFtrO6eD8pY1GZfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+nav {
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo a {
+   font-size: 24px;
+   font-weight: 600;
+   text-decoration: none;
+   color: #333;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navigation li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navigation li a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  input:checked ~ .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Styles for the footer container */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020202;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Styles for the footer sections */
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* Styles for the section headings */
+.footer-section h3 {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Styles for the section content */
+.footer-section p {
+  margin: 0;
+  color: #666;
+}
+
+/* Styles for the contact links */
+.footer-section a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the Instagram link */
+.footer-section .instagram {
+  display: inline-block;
+  background-image: url('instagram-icon.png');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+  .my-button {
+    margin-top: 10px;
+  background-color: rgb(0, 114, 159);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.my-button:hover {
+  background-color: rgb(19, 19, 53);
+}
+
+{{!-- .my-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+} --}}
+
+ .box {
+      display: flex;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .text {
+      margin-left: 20px;
+      margin-right: 100px;
+      margin-top: 20px;
+      float: right;
+      font-size: 20px;
+  }
+    
+  .box1 {
+      overflow: auto;
+      display: inline-block;
+      
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      
+    }
+    
+    .text1 {
+      margin-left: 10px;
+      margin-right: 20px;
+      margin-top: 20px;
+      float:calc(100% - 470px);
+      font-size: 20px;
+    }  
+    </style>
+</head>
+<body style="background-color: rgb(224,214,224);">
+    <header>
+  <nav>
+    <div class="logo">
+      <a href="#">U-BID</a>
+    </div>
+    <div class="menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navigation">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/sell">Sell</a></li>
+       <li><a href="/bid">Auction</a></li>
+      <li><a href="/about">About US</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+<div>
+
+<img src="wallpaper.jpg" style="width: 100%; height:400px;" class="img-fluid" alt="Responsive image">
+<br>
+<br>
+
+
+ <div class="container">
+    <div class="row">
+      <div class="col-md-6 order-md-1">
+        <div class="box">
+          
+          <img src="https://media.istockphoto.com/id/180810646/photo/house-sale-by-auction.jpg?s=612x612&w=0&k=20&c=HynqyCQcO3vYrPk6B5RsOV9nfNF6Zk7VAhXSJjB4vp4=" style="width: 450px;" alt="Box 1 Photo">
+          <div class="text">
+          <h1>Sell Your Product</h1>
+          <p>selling your product on an online auction system can be a cost-effective and convenient way to reach a wider audience, maximize profit, and gain valuable insights into buyer behavior.</p>
+          <a href="/sell"><button class="my-button">SELL</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2">
+        <div class="box1">
+
+          <img src="https://advancedpropertyauction.co.uk/assets/Uploads/gavel-bid.jpg" style="width: 450px; height: 300px; float:right" alt="Box 2 Photo">
+          <div class="text1">
+          <h1>Bid For Product</h1>
+          <p>selling your product on an online auction system can be a cost-effective and convenient way to reach a wider audience, maximize profit, and gain valuable insights into buyer behavior. </p>
+         <a href="/bid"><button class="my-button">BID</button></a>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<br>
+<br>
+<br>
+    <div class="footer">
+  <div class="footer-section">
+    <h3>Terms and Conditions</h3>
+    <p>By participating, users agree to follow auction rules and acknowledge responsibility for bids and payments. T&amp;C</p>
+  </div>
+  <div class="footer-section">
+    <h3>Contact Us</h3>
+    <p>Phone Number: 9106180010</p>
+    <p>Email: <a href="mailto:contact@auction.com">ubid@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/auction_official" target="_blank"><span class="instagram"></span>@auction_official</a></p>
+  </div>
+  
+  <div class="footer-section">
+    <h3><a href="/about">About US</a></h3>
+    <p>We strive to provide a secure and user-friendly platform for online auctions, offering a wide variety of items and ensuring fair bidding processes for both buyers and sellers.</p>
+  </div>
+</div>
+
+</body>
+</html>

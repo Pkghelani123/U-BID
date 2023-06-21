@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNS3vx" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script>
+      // Get the bid amount input element and the base price/current bid value
+const bidAmountInput = document.getElementById("bidAmount");
+const basePrice = {{price}}; // Assuming this value is passed from the server
+
+// Add an event listener to the bid amount input element to validate the bid amount
+bidAmountInput.addEventListener("input", () => {
+  const bidAmount = parseFloat(bidAmountInput.value);
+
+  // Check if the bid amount is greater than the base price or current bid value
+  if (bidAmount <= basePrice) {
+    bidAmountInput.setCustomValidity(`Bid amount must be greater than ${basePrice}`);
+  } else {
+    bidAmountInput.setCustomValidity("");
+  }
+  
+  // Update the form's validation state
+  bidAmountInput.reportValidity();
+});
+
+    </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #fff;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+
+    nav {
+       display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+    }
+
+    .logo a {
+        font-size: 24px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .button{
+      background-color: rgb(221,221,255);
+      border: #ddd;
+      
+    }
+
+
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #333;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .navigation li {
+      list-style: none;
+      margin-left: 30px;
+    }
+
+    .navigation li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    @media screen and (max-width: 992px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navigation {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navigation li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .navigation li a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      input:checked~.navigation {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color:rgb(224, 214, 224)">
+  <header>
+  <nav>
+    <div class="logo">
+      <a href="#">U-BID</a>
+    </div>
+    <div class="menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navigation">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/sell">Sell</a></li>
+       <li><a href="/bid">Auction</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" style="height:324px: width:88px">
+    <div class="row">
+      {{#each items}}
+      <div class="col-md-2">
+        <div class="card">
+          <img src="{{photo}}" style="height:120px; width:160px" class="card-img-top" alt="{{name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">
+              Base price: {{price}}
+            </p>
+            {{!-- <p>Time Remaining: <span id="countdown_{{this._id}}"></span></p> --}}
+            <button type="button" class="button" data-toggle="modal" data-target="#complaintModal{{@index}}">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="complaintModal{{@index}}" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <img src="{{photo}}" class="img-fluid" alt="{{name}}">
+                </div>
+                <div class="col-sm-6">
+                  <p><strong>Product name:</strong> {{name}}</p>
+                  <p><strong>Base Price:</strong> {{price}}</p>
+                  <p><strong>Description:</strong> {{description}}</p>
+                  <form action="/update/{{this._id}}" method="post">
+                    <div class="form-group">
+                      <label for="bidAmount">Bid amount:</label>
+                      <input type="text" class="form-control" id="bidAmount" name="bid">
+                      <button type="submit" class="btn btn-success mt-3">Make Bid</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+ 
+{{/each}}
+
+    </div>
+  </div>
+</body>
+</html>

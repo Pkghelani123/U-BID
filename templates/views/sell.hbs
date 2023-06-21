@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photo Form</title>
+    <style>body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"] {
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+}
+
+input[type="file"] {
+  padding: 0;
+}
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navigation li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navigation li a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  input:checked ~ .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+}
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+</style>
+  </head>
+  <body style="background-color: rgb(224,214,224);">
+     <header>
+  <nav>
+    <div class="logo">
+      <a href="#">U-BID</a>
+    </div>
+    <div class="menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navigation">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/sell">Sell</a></li>
+       <li><a href="/bid">Auction</a></li>
+      <li><a href="/about">About US</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+<br>
+<br>
+<br>
+    <h1> Add Product </h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="photo-name">Product Name:</label>
+      <input type="text" id="photo-name" name="name"><br><br>
+       <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="products">Choose a Product:</label>
+<select id="products" name="category">
+  <option value="electronic">Electronics</option>
+  <option value="vehicle">Vehicle</option>
+  <option value="furniture">Furniture-Item</option>
+  <option value="arts">Art</option>
+  <option value="machinery">Machinery</option>
+  
+</select>
+
+      <label for="photo-description">Product Description:</label>
+      <input type="text" id="photo-description" name="description"><br><br>
+      <label for="photo-file">Select a photo:</label>
+      <input type="file" id="photo-file" name="photo"><br><br>
+      <label for="photo-price">Base Price:</label>
+      <input type="text" id="photo-price" name="price"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+  </body>
+</html>
